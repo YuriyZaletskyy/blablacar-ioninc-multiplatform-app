@@ -7,7 +7,33 @@
 </ion-header>
 
 <ion-content padding>
-    Your trips
-    
-    <button ion-button secondary menuToggle>Show menu</button>
+    <ion-row>
+        <ion-col>
+            <h1>Going somewhere?</h1>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <h6>Share trip expenses with trustable community</h6>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col width-40>
+            <button ion-button round full (click)="goToProposeTrip()">Propose trip</button>
+        </ion-col>
+        <ion-col width-60></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col width-40>
+            <button ion-button round full (click)="goToFindTrip()">Find trip</button>
+        </ion-col>
+        <ion-col width-60></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col width-40>
+            <button ion-button secondary round full menuToggle>Show menu</button>
+        </ion-col>
+        <ion-col width-60></ion-col>
+    </ion-row>
 </ion-content>

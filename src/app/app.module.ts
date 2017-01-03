@@ -9,6 +9,8 @@ import { ProposeTrip } from '../pages/proposeTrip/proposeTrip';
 import { FeedBack } from '../pages/feedBack/feedBack';
 import { Inbox } from '../pages/inbox/inbox';
 import { Support } from '../pages/support/support';
+import {LoginPage } from '../pages/login/login';
+import {ExitPage } from '../pages/exit/exit';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { Support } from '../pages/support/support';
       ProposeTrip,
       FeedBack,
       Inbox,
-      Support
+      Support,
+      LoginPage,
+      ExitPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -32,7 +36,9 @@ import { Support } from '../pages/support/support';
       ProposeTrip,
       FeedBack,
       Inbox,
-      Support
+      Support,
+      LoginPage,
+      ExitPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 

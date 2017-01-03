@@ -10,6 +10,8 @@ import { ProposeTrip } from '../pages/proposeTrip/proposeTrip';
 import { FeedBack } from '../pages/feedBack/feedBack';
 import { Inbox } from '../pages/inbox/inbox';
 import { Support } from '../pages/support/support';
+import { ExitPage } from '../pages/exit/exit'
+
 
 @Component({
   templateUrl: 'app.html'
@@ -23,7 +25,6 @@ export class MyApp {
 
   constructor(public platform: Platform) {
 
-      debugger;
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -33,6 +34,7 @@ export class MyApp {
         { title: 'Propose trip', component: ProposeTrip },
         { title: 'Feedback', component: FeedBack },
         { title: 'Inbox', component: Inbox },
+        { title: 'Exit', component: ExitPage },
         { title: 'Support', component: Support }
     ];
 
