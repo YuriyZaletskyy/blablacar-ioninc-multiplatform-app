@@ -7,13 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-    find trip
-    <ion-row center>
-        <ion-col>
+    <ion-list>
 
-        </ion-col>
+        <ion-item>
+            <ion-label stacked>From</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
 
-    </ion-row>
+        <ion-item>
+            <ion-label stacked>To</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <div padding>
+        <button ion-button color="primary" block>Find trips</button>
+    </div>
 
     <button ion-button secondary menuToggle>Show menu</button>
 </ion-content>
