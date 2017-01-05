@@ -10,18 +10,30 @@
     <ion-list>
 
         <ion-item>
-            <ion-label stacked>From</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label>From</ion-label>
+            <ion-input type="text" [(ngModel)]="findTripInit.from"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label stacked>To</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label>To</ion-label>
+            <ion-input type="text" [(ngModel)]="findTripInit.to"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date from</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="findTripInit.dateFrom"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Date to</ion-label>
+            <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" [(ngModel)]="findTripInit.dateTo"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>Number of seats</ion-label>
+            <ion-input type="number" [(ngModel)]="findTripInit.numberOfSeats"></ion-input>
         </ion-item>
     </ion-list>
 
     <div padding>
-        <button ion-button color="primary" block>Find trips</button>
+        <button ion-button color="primary" block (click)="findTrips()">Find trips</button>
     </div>
 
     <button ion-button secondary menuToggle>Show menu</button>
