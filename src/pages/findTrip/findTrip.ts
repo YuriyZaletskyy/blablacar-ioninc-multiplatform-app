@@ -2,6 +2,8 @@
 import { Http, Response } from '@angular/http'
 import { FormsModule } from '@angular/forms'
 import { Config } from '../config'
+import { car, duration, facet, facetItem, links, pager, place, price, priceBase, trip, tripLink, TripsResponse } from '../tripDeclarations'
+import { AlertController } from 'ionic-angular';
 
 import 'rxjs';
 import { Observable } from 'rxjs/Observable'
@@ -16,7 +18,7 @@ export class FindTrip {
 
     public foundTrips: any = {};
 
-    constructor(private http: Http) {
+    constructor(private http: Http, public alertCtrl: AlertController) {
        
     }
 
@@ -26,23 +28,26 @@ export class FindTrip {
         let head = new headers();
 
 
-        let searchUrl: string = conf.getSearchUrl(this.findTripInit.from, this.findTripInit.to, "en_US", "json", "USD", "10", "asc", this.findTripInit.numberOfSeats, 50,
+        let searchUrl: string = conf.getSearchUrl(this.findTripInit.from, this.findTripInit.to, "en_GB", "json", "EUR", "10", "asc", this.findTripInit.numberOfSeats, 50,
             this.findTripInit.dateFrom, this.findTripInit.dateTo);
 
         this.http.get(searchUrl, head)
             .subscribe(
             (r: any) => {//correct response
-                debugger;
+                let resp = Object.create(TripsResponse.prototype);
+                let respRecieved = Object.assign(resp, r.json());
             },
             (e: any) => {//error
-                debugger;
+                let alert = this.alertCtrl.create({
+                    title: 'Something went wrong',
+                    subTitle: e,
+                    buttons: ['OK']
+                });
+                alert.present();
             },
             () => {//complete
-                debugger;
+                
             });
-
-        debugger;
-
     }
 
 }
@@ -64,9 +69,9 @@ export class FindTripInit
     constructor()
     {
         let currentDate: Date = new Date();
-        debugger;
         this.dateFrom = currentDate.toISOString();
         this.dateTo = "" + currentDate.toISOString();
     }
 
 }
+
