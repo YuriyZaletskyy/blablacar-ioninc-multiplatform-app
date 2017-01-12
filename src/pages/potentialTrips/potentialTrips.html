@@ -1,0 +1,18 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Trips according to your criteria</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <button ion-item *ngFor="let trip of tripsResp.trips">
+            {{trip.departure_place.city_name}}
+        </button>
+    </ion-list>
+
+</ion-content>

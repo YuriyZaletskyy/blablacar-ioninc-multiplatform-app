@@ -10,8 +10,8 @@ import { FeedBack } from '../pages/feedBack/feedBack';
 import { Inbox } from '../pages/inbox/inbox';
 import { Support } from '../pages/support/support';
 import {LoginPage } from '../pages/login/login';
-import {ExitPage } from '../pages/exit/exit';
-
+import { ExitPage } from '../pages/exit/exit';
+import { PotentialTripsPage } from '../pages/potentialTrips/potentialTrips';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import {ExitPage } from '../pages/exit/exit';
       Inbox,
       Support,
       LoginPage,
-      ExitPage
+      ExitPage,
+      PotentialTripsPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -38,7 +39,8 @@ import {ExitPage } from '../pages/exit/exit';
       Inbox,
       Support,
       LoginPage,
-      ExitPage
+      ExitPage,
+      PotentialTripsPage
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]
 

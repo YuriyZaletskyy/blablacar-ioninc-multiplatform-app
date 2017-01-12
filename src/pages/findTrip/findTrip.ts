@@ -2,11 +2,10 @@
 import { Http, Response } from '@angular/http'
 import { FormsModule } from '@angular/forms'
 import { Config } from '../config'
-import { car, duration, facet, facetItem, links, pager, place, price, priceBase, trip, tripLink, TripsResponse } from '../tripDeclarations'
-import { AlertController } from 'ionic-angular';
+import { car, duration, facet, facetItem, links, TripsResponse } from '../tripDeclarations'
+import { AlertController, NavController } from 'ionic-angular';
+import { PotentialTripsPage } from '../potentialTrips/potentialTrips'
 
-import 'rxjs';
-import { Observable } from 'rxjs/Observable'
 
 @Component({
     templateUrl: 'findTrip.html'
@@ -18,7 +17,7 @@ export class FindTrip {
 
     public foundTrips: any = {};
 
-    constructor(private http: Http, public alertCtrl: AlertController) {
+    constructor(private http: Http, private nav: NavController, public alertCtrl: AlertController) {
        
     }
 
@@ -36,6 +35,7 @@ export class FindTrip {
             (r: any) => {//correct response
                 let resp = Object.create(TripsResponse.prototype);
                 let respRecieved = Object.assign(resp, r.json());
+                this.nav.push(PotentialTripsPage, respRecieved);
             },
             (e: any) => {//error
                 let alert = this.alertCtrl.create({
