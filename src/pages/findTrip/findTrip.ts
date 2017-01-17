@@ -1,8 +1,8 @@
 ﻿import { Component, Injectable } from '@angular/core'
-import { Http, Response } from '@angular/http'
+import { Http } from '@angular/http'
 import { FormsModule } from '@angular/forms'
 import { Config } from '../config'
-import { car, duration, facet, facetItem, links, TripsResponse } from '../tripDeclarations'
+import { TripsResponse } from '../tripDeclarations'
 import { AlertController, NavController } from 'ionic-angular';
 import { PotentialTripsPage } from '../potentialTrips/potentialTrips'
 

@@ -1,18 +1,48 @@
 
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Trips according to your criteria</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>Trips according to your criteria</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list>
-        <button ion-item *ngFor="let trip of tripsResp.trips">
-            {{trip.departure_place.city_name}}
-        </button>
-    </ion-list>
+        <ion-list>
+            <ion-item>
+                <ion-row>
+                    <ion-col>
+                        Dep./Arrival
+                    </ion-col>
+                    <ion-col>
+                        Date time
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+
+            <ion-item *ngFor="let trip of tripsResp.trips">
+                <ion-row>
+                    <ion-col>
+                        From: {{trip.departure_place.city_name}}
+                    </ion-col>
+                    <ion-col>
+                        {{trip.departureTimeFormatted}}
+                    </ion-col>
+
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        To: {{trip.arrival_place.city_name}}
+                    </ion-col>
+                    <ion-col>
+                        Duration: {{trip.tripDurationHours}} hr
+                    </ion-col>
+                </ion-row>
+
+
+
+            </ion-item>
+        </ion-list>
 
 </ion-content>

@@ -22,6 +22,12 @@ export class trip {
     booking_type: string;
 
     locations_to_display: string[];
+
+    departure_date: Date;
+    arrivalDate: Date;
+
+    departureTimeFormatted: string;
+    tripDurationHours: number;
 }
 
 export class tripLink {
@@ -49,7 +55,7 @@ export class price extends priceBase {
     price_color: string;
 }
 export class duration {
-    value: Number;
+    value: number;
     unity: string;
 }
 

@@ -1,12 +1,6 @@
 {
-  "name": "blablacar-universal",
+  "name": "Let's go",
   "app_id": "",
   "v2": true,
-  "typescript": true,
-  "proxies": [
-    {
-      "path": "/api",
-      "proxyUrl": "https://public-api.blablacar.com/api"
-    }
-  ]
+  "typescript": true
 }
